@@ -1,0 +1,196 @@
+html {
+    overflow: hidden;
+    background-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+    font-size: 2vh;
+    border: 0.3vh dashed #888;
+    border-radius: 0.5vh;
+    background-color: transparent;
+    color: white;
+    height: 5vh;
+    width: 10vh;
+    margin: 2vh;
+}
+
+#progress {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: transparent;
+}
+
+#currentProgress {
+    background-color: #888;
+    height: 0.5vh;
+}
+
+#message {
+    font-size: 10vh;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    text-shadow: 5px 5px 8px black;
+    font-weight: bold;
+}
+
+#info {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    font-size: 3vh;
+    color :#888;
+    justify-content: space-around;
+    gap: 2vw;
+    /*text-shadow: 0.2vh 0.2vh 0.8vh black;*/
+    width: 98%;
+}
+#info > * {
+    flex: 0 1 auto;
+}
+#info #currentImage,
+#info #music {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hidden {
+    display: none;
+}
+
+.frame {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: 40s steps(40) fade-out;
+}
+
+@keyframes fade-out {
+    0% { opacity: 1; }
+    30% { filter: grayscale(0); }
+    93% { filter: grayscale(1); opacity: 1; }
+    98% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.inner-frame {
+    border: 2vh solid white;
+    box-shadow: 0 0 2.5vh 0.2vh black ;
+    background-color: white;
+}
+
+/* does not work with long text since the forced dimension of the picture is the height, by forcing the width (and height at 160% of the width), it may work */
+.subtitle {
+    font-size: 4vh;
+    color: black;
+    text-align: center;
+}
+
+/* TODO ajuster automatiquement la taille des images en fonction de bottom et top ? (ex: si top & vertical, passer en small)*/
+.left {
+    left: 22vw;
+}
+
+.center {
+    left: 50vw;
+}
+
+.right {
+    left: 78vw;
+}
+
+.top {
+    top: 25vh;
+}
+
+.middle {
+    top: 50vh;
+}
+
+.bottom {
+    top: 75vh;
+}
+
+.move {
+    animation-timing-function: cubic-bezier(.77,.89,.57,.99);
+}
+
+/* from directions like the numbers on the clock */
+.move.n1 { animation-name: throw-image-1; }
+.move.n2 { animation-name: throw-image-2; }
+.move.n3 { animation-name: throw-image-3; }
+.move.n4 { animation-name: throw-image-4; }
+.move.n5 { animation-name: throw-image-5; }
+.move.n6 { animation-name: throw-image-6; }
+.move.n7 { animation-name: throw-image-7; }
+.move.n8 { animation-name: throw-image-8; }
+.move.n9 { animation-name: throw-image-9; }
+.move.n10 { animation-name: throw-image-10; }
+.move.n11 { animation-name: throw-image-11; }
+.move.n12 { animation-name: throw-image-12; }
+
+@keyframes throw-image-1 {
+    from { transform: translate(40vw, -60vw) rotate(30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-2 {
+    from { transform: translate(60vw, -40vw) rotate(30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-3 {
+    from { transform: translate(100vw, -5vw) rotate(30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-4 {
+    from { transform: translate(70vw, 30vw) rotate(30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-5 {
+    from { transform: translate(30vw, 70vw) rotate(-30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-6 {
+    from { transform: translate(-5vw, 100vw) rotate(-30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-7 {
+    from { transform: translate(-30vw, 70vw) rotate(30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-8 {
+    from { transform: translate(-70vw, 30vw) rotate(-30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-9 {
+    from { transform: translate(-100vw, 5vw) rotate(30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-10 {
+    from { transform: translate(-30vw, -70vw) rotate(-30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-11 {
+    from { transform: translate(-10vw, -80vw) rotate(30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes throw-image-12 {
+    from { transform: translate(5vw, -100vw) rotate(-30deg); }
+    to { transform: translate(0, 0) rotate(0); }
+}
+

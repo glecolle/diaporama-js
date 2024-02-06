@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="diaporama.css">
+        <script src="diaporama.js" type="text/javascript"></script>
+        <script src="content.js" type="text/javascript"></script>
+        <title>Diaporama</title>
+    </head>
+    <body id="body">
+        <button id="start">▶</button>
+        <button id="startLoop">▶ ∞</button>
+        <button id="startInfo">▶ 🛈</button>
+        <div id="images"></div>
+        <div id="message"></div>
+        <div id="info">
+            <div id="sequence"></div>
+            <div id="music" title="music source file"></div>
+            <div id="elapsedInSequence" title="sequence elapsed time"></div>
+            <div id="elapsedTotal" title="total elapsed time"></div>
+            <div id="currentImage" title="image source file"></div>
+            <div id="currentImageDelay" title="planned delay"></div>
+            <div id="currentImageDuration" title="planned duration"></div>
+            <div id="realDelay" title="real delay"></div>
+            <div id="loadTime" title="actual image load time"></div>
+        </div>
+        <div id="progress"><div id="currentProgress" style="width:0"></div></div>
+    </body>
+    <script type="text/javascript">
+        // start the show!
+        Diaporama.prepareAudio(content);
+
+        document.getElementById("start").addEventListener("click", function() {
+            Array.from(document.getElementsByTagName("BUTTON")).forEach(e => { e.remove() });
+            new Diaporama(content);
+        });
+        document.getElementById("startInfo").addEventListener("click", function() {
+            Array.from(document.getElementsByTagName("BUTTON")).forEach(e => { e.remove() });
+            Diaporama.setInfo(true);
+            new Diaporama(content);
+        });
+        document.getElementById("startLoop").addEventListener("click", function() {
+            Array.from(document.getElementsByTagName("BUTTON")).forEach(e => { e.remove() });
+            Diaporama.setLoop(true);
+            new Diaporama(content);
+        });
+    </script>
+</html>
